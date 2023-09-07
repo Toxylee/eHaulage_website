@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./ride.css">
+        <script src="./pickup.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <nav class="nav_bar">
+            <div class="logo">
+                <h1>Logo</h1>
+            </div>
+            <div class="nav_links">
+                <a href="">Service</a>
+                <a href="">Ride with us</a>
+                <a href="">Ride for us</a>
+            </div>
+        </nav>
+        <section>
+            <p id="confirm"></p>
+        </section>
+        <section>
+            <div class="search_div">
+                <div class="pick_n_src">
+                    <input type="search" class="search" placeholder="Pick up address" id="pick_psng">
+                    <input type="search" class="search" placeholder="Destination address" id="dest_psng">
+                    <input type="submit" class="submit" onclick=pick_up()>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
