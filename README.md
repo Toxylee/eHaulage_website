@@ -1,129 +1,88 @@
-Project MVP feature implementation of eHaulage website.
-
-This is includes:
-frontend
-backend
-database
-Creating a standard README file for a haulage website can help provide essential information to users, contributors, and collaborators. Below is a template you can use as a starting point:
-
-# Haulage Website
-
-![Website Screenshot](/home/busari/Pictures/Screenshots/screenshot.png)
-
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Website Status](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://http://ehaulage.toxyleesystems.tech/)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
-
-## Table of Contents
-
-- [Description](#description)
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Description
 
-The eHaulage Website is an online platform designed to facilitate the transportation and logistics needs of businesses and individuals. It provides an efficient and user-friendly interface for managing freight, tracking shipments, and connecting with reliable transport providers.
+The eHaulage Website is an online platform designed to facilitate the transportation and logistics needs of businesses and individuals. It provides an efficient and user-friendly interface for managing freight, tracking shipments, and connecting with reliable transport providers. THe web application Frontend is built with HTML, CSS, Bootstrap and the Backend with Flask, Python. It provides a platform for users to access information about their haulage services, submit inquiries, and potentially make bookings.
 
 ## Features
 
-- **User Registration:** Users can create accounts, providing personal and company information.
+- **Homepage**: A welcoming homepage with an overview of your services and a call-to-action for users to learn more or contact you.
+- **Services**: Detailed information about the haulage services you offer, including descriptions, pricing, and coverage areas.
+- **Contact**: A contact page with a form for users to submit inquiries or request quotes.
+- **Authentication (Optional)**: User registration and login for accessing personalized services (e.g., booking history, account settings).
+- **Admin Panel (Optional)**: An admin dashboard for managing bookings, inquiries, and user accounts.
 
-- **Freight Management:** Easily manage shipments, including creating, editing, and tracking.
+## Prerequisites
 
-- **Search and Connect:** Find and connect with transport providers for your cargo needs.
+- Python 3.x
+- Flask
+- Other dependencies (list them here)
 
-- **User Dashboard:** A personalized dashboard for users to view their shipments, notifications, and account settings.
+## Installation
 
-- **Payment Integration:** Securely handle payments and invoices for transportation services.
-
-- **Admin Panel:** Administrative tools for managing users, shipments, and system settings.
-
-## Getting Started
-
-### Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-- [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
-
-### Installation
-
-1. Clone the repository:
+1. Clone this repository:
 
    ```bash
    git clone https://github.com/Toxylee/eHaulage_website.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
    cd haulage-website
    ```
 
-3. Install the dependencies:
+2. Create and activate a virtual environment (recommended):
 
    ```bash
-   npm install
+   python -m venv venv
+   source venv/bin/activate
    ```
 
-4. Configure your environment variables by copying the `.env.example` file to `.env` and filling in the required values:
+3. Install the required dependencies:
 
    ```bash
-   cp .env.example .env
+   pip install -r requirements.txt
    ```
 
-5. Start the development server:
+4. Configure your application settings (e.g., database connection, secret keys) in `config.py` or use environment variables.
+
+5. Initialize the database (if required):
 
    ```bash
-   npm start
+   flask db init
+   flask db migrate
+   flask db upgrade
    ```
 
-6. Access the website at `http://localhost:3000` in your browser.
+6. Start the Flask development server:
+
+   ```bash
+   flask run
+   ```
+
+Your haulage website should now be accessible at `http://localhost:5000`.
 
 ## Usage
 
-1. Register an account on the Haulage Website.
-
-2. Log in to your account.
-
-3. Use the platform to manage your shipments, connect with transport providers, and track your cargo.
+1. Visit the website by opening a web browser and navigating to `http://localhost:5000`.
+2. Explore the available features, including viewing services and contacting the haulage company.
+3. If authentication is enabled, users can register and log in for additional features.
+4. Administrators can access the admin panel by visiting `http://localhost:5000/admin` (if implemented).
 
 ## Contributing
 
-We welcome contributions from the community. To get started:
+If you'd like to contribute to this project, please follow these steps:
 
 1. Fork the repository on GitHub.
+2. Clone your forked repository locally.
+3. Create a new branch for your feature or bug fix.
+4. Make your changes and commit them.
+5. Push your changes to your fork on GitHub.
+6. Create a pull request to the main repository's `main` branch.
 
-2. Create a new branch for your feature or bug fix:
 
-   ```bash
-   git checkout -b feature/my-feature
-   ```
+## Acknowledgments
 
-3. Commit your changes:
+- Mention any libraries, templates, or resources you used in your project.
 
-   ```bash
-   git commit -m "Add new feature"
-   ```
+## Contact
 
-4. Push to your branch:
+- Tokunbo, Olufunmmy and Steve
+- Email: y
+- Website: [www.yourwebsite.com](http://ehaulage.toxyleesystems.tech/)
 
-   ```bash
-   git push origin feature/my-feature
-   ```
-
-5. Open a pull request on the original repository.
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for more details on our code of conduct and the process for submitting pull requests.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
