@@ -10,7 +10,7 @@ views = Blueprint('views', __name__)
 @login_required
 def home():
     if request.method == 'POST': 
-        Note = request.form.get('Note')#Gets the note from the HTML 
+        note = request.form.get('note')#Gets the note from the HTML 
 
         if len(note) < 1:
             flash('Note is too short!', category='error') 
@@ -20,14 +20,30 @@ def home():
             db.session.commit()
             flash('Note added!', category='success')
 
-    return render_template("Ridewithus.html", user=current_user)
+    return render_template("Request.html", user=current_user)
+
+@views.route('/home4', methods=['GET', 'POST'])
+@login_required
+def home4():
+    if request.method == 'POST':
+        note = request.form.get('note')#Gets the note from the HTML
+
+        if len(note) < 1:
+            flash('Note is too short!', category='error')
+        else:
+            new_note = Note(data=note, user2_id=current_user2.id)  #providing the schema for the note
+            db.session.add(new_note) #adding the note to the database
+            db.session.commit()
+            flash('Note added!', category='success')
+
+    return render_template("Request.html", user2=current_user)
 
 
 @views.route('/home2', methods=['GET', 'POST'])
 @login_required
 def home2():
     if request.method == 'POST':
-        Note = request.form.get('Note')#Gets the note from the HTML
+        note = request.form.get('note')#Gets the note from the HTML
 
         if len(note) < 1:
             flash('Note is too short!', category='error')
@@ -37,7 +53,7 @@ def home2():
             db.session.commit()
             flash('Note added!', category='success')
 
-    return render_template("Ridewithus2.html", user=current_user)
+    return render_template("Request.html", user=current_user)
 
 
 
@@ -45,17 +61,17 @@ def home2():
 @login_required
 def home3():
     if request.method == 'POST':
-        Note = request.form.get('Note')#Gets the note from the HTML
+        note = request.form.get('note')#Gets the note from the HTML
 
         if len(note) < 1:
             flash('Note is too short!', category='error')
         else:
-            new_order = Note(data=note, user_id=current_user.id)  #providing the schema for the note
+            new_order = Note(data=note, user2_id=current_user2.id)  #providing the schema for the note
             db.session.add(new_note) #adding the note to the database
             db.session.commit()
             flash('Note added!', category='success')
 
-    return render_template("Ride4us.html", user=current_user)
+    return render_template("Receive.html", user2=current_user)
 
 
 

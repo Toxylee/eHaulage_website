@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Services{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h3 align="center">List of Haulage Services Rendered</h3>
+  
+  <!-- Table to display the list of services -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Service Date</th>
+        <th>Client Name</th>
+        <th>Service Type</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loop through your list of services and populate the table rows -->
+      {% for service in services %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ service.date }}</td>
+        <td>{{ service.client_name }}</td>
+        <td>{{ service.service_type }}</td>
+        <td>${{ service.amount }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+
