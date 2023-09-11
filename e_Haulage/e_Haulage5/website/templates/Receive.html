@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}Receive Order{% endblock %} {% block content
+%}
+<h1 align="center">Receive Order</h1>
+
+<!-- Display a list of orders for the user -->
+<ul class="list-group list-group-flush" id="orders">
+  {% for order in user.orders %}
+  <li class="list-group-item">
+    {{ order.data }}
+
+    <!-- Create a button to delete the order -->
+    <button type="button" class="close" onClick="deleteOrder({{ order.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+  {% endfor %}
+</ul>
+
+<!-- Create a form to submit a new order -->
+<form method="POST">
+  <textarea name="order" id="order" class="form-control"></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Confirm Order</button>
+  </div>
+</form>
+{% endblock %}
