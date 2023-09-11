@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block title %}Ridewithus{% endblock %} {% block content
+%}
+<h1 align="center">Request a service</h1>
+
+<!-- Display a list of orders for the user -->
+<ul class="list-group list-group-flush" id="orders">
+  {% for order in user.orders %}
+  <li class="list-group-item">
+    {{ order.data }}
+    <button type="button" class="close" onClick="deleteOrder({{ order.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+  {% endfor %}
+</ul>
+<!-- Create a form to submit a new order -->
+<form method="POST">
+  <textarea name="order" id="order" placeholder="Pick up address" class="form-control"></textarea>
+  <br />
+  <textarea name="order" id="order" placeholder="Destination address" class="form-control"></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Place your order</button>
+  </div>
+</form>
+{% endblock %}
