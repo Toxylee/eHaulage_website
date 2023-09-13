@@ -20,7 +20,7 @@ def home():
             flash('Order request is too short!', category='error') 
         else:
             new_order = Order(data=order, user_id=current_user.id)  #providing the schema for the note 
-            db.session.add(new_order) #adding the note to the database 
+            db.session.add(new_order) #adding the note to the database
             db.session.commit()
             flash('Order added!', category='success')
 
@@ -57,7 +57,7 @@ def home2():
             db.session.commit()
             flash('Order added!', category='success')
 
-    return render_template("Request.html", user=current_user)
+    return render_template("Receive.html", user=current_user)
 
 
 # Define a route for the home page that requires user authentication.
